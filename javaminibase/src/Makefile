@@ -41,8 +41,14 @@ db:
 doc:
 	$(JAVADOC) $(DOCFILES)
 
-test: 
+test:
 	cd tests; make bmtest dbtest; whoami; make hftest bttest indextest jointest sorttest sortmerge
+
+make hftest:
+	cd tests; whoami; make hftest
+
+make bmtest:
+	cd tests; whoami; make bmtest
 
 clean:
 	\rm -f $(CLASSPATH)/*.class *~ \#* core $(JARFILES) TRACE
